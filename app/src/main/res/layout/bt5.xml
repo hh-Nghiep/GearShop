@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Bt5Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin cá nhân"
+        android:background="#00FFAE"
+        android:textSize="25sp"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập họ và tên"/>
+
+    <EditText
+        android:id="@+id/edtIDCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập căn cước công dân"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bằng cấp"
+        android:background="#00f"
+        android:textSize="25sp"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RadioButton
+                android:id="@+id/radUniversity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đại học" />
+
+            <RadioButton
+                android:id="@+id/radIntermediate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trung cập" />
+
+            <RadioButton
+                android:id="@+id/radCollege"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cao đẳng" />
+        </RadioGroup>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sở thích"
+        android:background="#00f"
+        android:textSize="25sp"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <CheckBox
+            android:id="@+id/cbxGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chơi game"
+            />
+        <CheckBox
+            android:id="@+id/cbxBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đọc sách"
+            />
+        <CheckBox
+            android:id="@+id/cbxNewspaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đọc báo"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin khác"
+        android:background="#00f"
+        android:textSize="25sp"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/edtOther"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập thông tin khác"
+        android:textColorHint="#4F4FF1"
+        />
+
+    <Button
+        android:id="@+id/btnSendInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gửi thông tin"
+        />
+    <TextView
+        android:id="@+id/tvInformation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0f0"
+        android:textColor="@color/black"
+        />
+
+</LinearLayout>

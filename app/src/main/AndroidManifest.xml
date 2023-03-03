@@ -20,6 +20,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Bt1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bt2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bt3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bt4Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bt5Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bt6Activity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

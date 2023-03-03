@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Bt6Activity">
+
+    <ToggleButton
+        android:id="@+id/switchLight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOff="TẮT"
+        android:textOn="BẬT" />
+
+    <ImageView
+        android:id="@+id/imgLight"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:src="@drawable/dentat"
+        />
+
+
+    <Switch
+        android:id="@+id/switchFan"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:text="Quạt" />
+
+    <ImageView
+        android:id="@+id/imgFan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/quat"
+        />
+
+</LinearLayout>
