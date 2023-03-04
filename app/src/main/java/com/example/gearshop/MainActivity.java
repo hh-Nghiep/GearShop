@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnBai1, btnBai2, btnBai3, btnBai4, btnBai5, btnBai6;
+    Button btnBai1, btnBai2, btnBai3, btnBai4, btnBai5, btnBai6, btnBai7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         btnBai4 = findViewById(R.id.button4);
         btnBai5 = findViewById(R.id.button5);
         btnBai6 = findViewById(R.id.button6);
+        btnBai7 = findViewById(R.id.button7);
         btnBai1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,5 +76,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentBai6);
             }
         });
+        btnBai7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // khai báo intent Bài 7
+                Intent intentBai7 = new Intent(MainActivity.this, Bt7Activity.class);
+                // Khởi động == chuyển màn hình
+                startActivity(intentBai7);
+            }
+        });
+//        btnBai8.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // khai báo intent Bài 8
+//                Intent intentBai8 = new Intent(MainActivity.this, Bt8Activity.class);
+//                // Khởi động == chuyển màn hình
+//                startActivity(intentBai8);
+//            }
+//        });
     }
 }

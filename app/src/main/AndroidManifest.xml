@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Bài Tập Thực Hành"
         android:supportsRtl="true"
         android:theme="@style/Theme.GearShop"
         tools:targetApi="31">
@@ -37,6 +37,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Bt6Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Bt7Activity"
             android:screenOrientation="portrait" />
     </application>
 

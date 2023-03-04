@@ -46,6 +46,13 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="Bài tập 6" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="Bài tập 7" />
+
     </LinearLayout>
 
 </FrameLayout>
