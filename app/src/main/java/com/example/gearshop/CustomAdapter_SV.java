@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,8 +46,13 @@ public class CustomAdapter_SV extends ArrayAdapter<SinhVien> {
             viewHolder.imGioiTinh.setImageResource(R.drawable.baseline_man_24);
         else
             viewHolder.imGioiTinh.setImageResource(R.drawable.baseline_woman_24);
-
-//        viewHolder.cbChon.setChecked(f);
+        viewHolder.cbChon.setChecked(sv.getSelect());
+        viewHolder.cbChon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                sv.setSelect(b);
+            }
+        });
         return convertView;
     }
 
@@ -62,30 +68,6 @@ public class CustomAdapter_SV extends ArrayAdapter<SinhVien> {
             this.cbChon = view.findViewById(R.id.cbChon);
         }
 
-        public void ChonHet(){
-            for(SinhVien sv:data){
-                sv.setSelect(true);
-            }
-            notifyDataSetChanged();
-        }
 
-        public void BoChon(){
-            for(SinhVien sv:data){
-                sv.setSelect(false);
-            }
-            notifyDataSetChanged();
-        }
-
-        public void XoaDS(){
-            ArrayList<SinhVien> data_temp = new ArrayList<>();
-            for(SinhVien sv:data){
-                if(!sv.getSelect()){
-                    data_temp.add(sv);
-                }
-            }
-            data.clear();
-            data.addAll(data_temp);
-            notifyDataSetChanged();
-        }
     }
 }

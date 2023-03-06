@@ -1,15 +1,19 @@
 package com.example.gearshop;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -40,11 +44,15 @@ public class Bt7Activity extends AppCompatActivity {
         lvDanhSach.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                SinhVien sv = dataSV.get(i);
-                Toast.makeText(Bt7Activity.this, (String)"Tên: "+sv.getName(), Toast.LENGTH_LONG).show();
+                sinhVien = dataSV.get(i);
+                Toast.makeText(Bt7Activity.this, (String)"Tên: "+sinhVien.getName(), Toast.LENGTH_LONG).show();
                 ChonSinhVien();
+                CheckBox cbChon = (CheckBox) view.findViewById(R.id.cbChon);
+                cbChon.setSelected(true);
             }
         });
+
+
 
         lvDanhSach.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -65,7 +73,19 @@ public class Bt7Activity extends AppCompatActivity {
         btnXoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dataSV.remove(sinhVien);
+                int z = dataSV.size();
+                for(int i = 0 ; i<dataSV.size() ; ){
+                    if(dataSV.get(i).getSelect()){
+                        dataSV.remove(i);
+                    }else{
+                        i++;
+                    }
+                }
+                if(dataSV.isEmpty()){
+                    ArrayList<SinhVien> data_temp = new ArrayList<>();
+                    dataSV.clear();
+                    dataSV.addAll(data_temp);
+                }
                 adapter_SV.notifyDataSetChanged();
             }
         });
@@ -88,6 +108,27 @@ public class Bt7Activity extends AppCompatActivity {
             }
         });
 
+
+        btnChonHet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChonHet();
+            }
+        });
+
+        btnBoChon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BoChon();
+            }
+        });
+
+        btnXoaDS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                XoaDS();
+            }
+        });
     }
 
     private void ChonSinhVien() {
@@ -108,6 +149,32 @@ public class Bt7Activity extends AppCompatActivity {
         sv.setDayofbirth(editNgaySinh.getText().toString());
         sv.setGender(radNam.isChecked());
         dataSV.add(sv);
+        adapter_SV.notifyDataSetChanged();
+    }
+
+    public void ChonHet(){
+        for(SinhVien sv:dataSV){
+            sv.setSelect(true);
+        }
+        adapter_SV.notifyDataSetChanged();
+    }
+
+    public void BoChon(){
+        for(SinhVien sv:dataSV){
+            sv.setSelect(false);
+        }
+        adapter_SV.notifyDataSetChanged();
+    }
+
+    public void XoaDS(){
+        ArrayList<SinhVien> data_temp = new ArrayList<>();
+        for(SinhVien sv:dataSV){
+            if(!sv.getSelect()){
+                data_temp.add(sv);
+            }
+        }
+        dataSV.clear();
+        dataSV.addAll(data_temp);
         adapter_SV.notifyDataSetChanged();
     }
 
@@ -132,5 +199,6 @@ public class Bt7Activity extends AppCompatActivity {
         btnChonHet = findViewById(R.id.btnChonHet);
         btnBoChon = findViewById(R.id.btnBoChon);
         btnXoaDS = findViewById(R.id.btnXoaDS);
+
     }
 }

@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="63dp"
+        android:layout_height="12dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Quản Lý Sinh Viên" />
@@ -79,7 +79,7 @@
     <ListView
         android:id="@+id/lvDanhSach"
         android:layout_width="wrap_content"
-        android:layout_height="363dp"
+        android:layout_height="272dp"
         android:layout_weight="1" />
     <LinearLayout
         android:layout_width="match_parent"
